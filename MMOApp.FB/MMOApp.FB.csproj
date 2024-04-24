@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F6333C1-6781-4A2D-98A3-3741FA887F72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMOApp.FB</RootNamespace>
+    <AssemblyName>MMOApp.FB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\release\MMOApp.FB\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.6.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xNet">
+      <HintPath>lib\xNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AppData.cs" />
+    <Compile Include="BLL\Business.cs" />
+    <Compile Include="BLL\FacebookParser.cs" />
+    <Compile Include="BLL\FacebookPrivateAPI.cs" />
+    <Compile Include="BLL\FacebookUrlParser.cs" />
+    <Compile Include="BLL\FacebookWebRequest.cs" />
+    <Compile Include="BLL\FBCommon.cs" />
+    <Compile Include="BLL\HtmlParser.cs" />
+    <Compile Include="Common\AccessTokenBlockedException.cs" />
+    <Compile Include="Common\BaseWebRequest.cs" />
+    <Compile Include="Common\ConnectionHelper.cs" />
+    <Compile Include="Common\DynamicHelper.cs" />
+    <Compile Include="Common\EncryptionUtils.cs" />
+    <Compile Include="Common\EnvironmentUtils.cs" />
+    <Compile Include="Common\HtmlEncoder.cs" />
+    <Compile Include="Common\ImageProcessor.cs" />
+    <Compile Include="Common\ImageUtility.cs" />
+    <Compile Include="Common\NumberExtensions.cs" />
+    <Compile Include="Common\RandomExtensions.cs" />
+    <Compile Include="Common\RgbProjections.cs" />
+    <Compile Include="Common\WebFactory.cs" />
+    <Compile Include="Common\CharExtensions.cs" />
+    <Compile Include="Common\Cloner.cs" />
+    <Compile Include="Common\ControlExtensions.cs" />
+    <Compile Include="Common\DateTimeExtensions.cs" />
+    <Compile Include="Common\Domainer.cs" />
+    <Compile Include="Common\HtmlHelper.cs" />
+    <Compile Include="Common\HtmlNodeExtensions.cs" />
+    <Compile Include="Common\ICollectionExtensions.cs" />
+    <Compile Include="Common\IDictionaryExtensions.cs" />
+    <Compile Include="Common\IEnumerableExtensions.cs" />
+    <Compile Include="Common\InfinitedRedirectException.cs" />
+    <Compile Include="Common\IWeb.cs" />
+    <Compile Include="Common\LogContent.cs" />
+    <Compile Include="Common\LogMode.cs" />
+    <Compile Include="Common\ReflectionHelper.cs" />
+    <Compile Include="Common\RichTextBoxExtensions.cs" />
+    <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="Common\UploadFile.cs" />
+    <Compile Include="Common\WebEventArgs.cs" />
+    <Compile Include="Common\WebResponseException.cs" />
+    <Compile Include="Common\xNetWeb.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\AccountBlockedException.cs" />
+    <Compile Include="Entities\AccountException.cs" />
+    <Compile Include="Entities\AccountSuspendedException.cs" />
+    <Compile Include="Entities\AppVerification.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\CheckpointPhotosOfFriendsData.cs" />
+    <Compile Include="Entities\CheckPointType.cs" />
+    <Compile Include="Entities\FBModel.cs" />
+    <Compile Include="Entities\FacebookPhoto.cs" />
+    <Compile Include="Entities\FacebookUser.cs" />
+    <Compile Include="Entities\FacebookVerification.cs" />
+    <Compile Include="Entities\IMHAccount.cs" />
+    <Compile Include="Entities\KCookie.cs" />
+    <Compile Include="Entities\LoginException.cs" />
+    <Compile Include="Entities\Proxy.cs" />
+    <Compile Include="Entities\SiteStructureChangedException.cs" />
+    <Compile Include="Entities\SocialUser.cs" />
+    <Compile Include="Entities\WrongPasswordException.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RichTextLogger.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
